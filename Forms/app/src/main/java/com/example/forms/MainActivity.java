@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
 
                 // set title
-                builder.setTitle("Select Language");
+                builder.setTitle("Select one or many birds");
 
                 // set dialog non cancelable
                 builder.setCancelable(false);
@@ -49,10 +50,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialogInterface, int i, boolean b) {
                         // check condition
                         if (b) {
-                            // when checkbox selected
-                            // Add position  in lang list
                             birdsList.add(i);
-                            // Sort array list
                             Collections.sort(birdsList);
                         } else {
                             // when checkbox unselected
@@ -98,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                         for (int j = 0; j < selectedBirds.length; j++) {
                             // remove all selection
                             selectedBirds[j] = false;
-                            // clear language list
+                            // clear birds list
                             birdsList.clear();
                             // clear text view value
                             textView.setText("");
@@ -116,11 +114,25 @@ public class MainActivity extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                try {
+//                    WatcherModel watcherModel =
+//                            new WatcherModel
+//                } catch {
+//                })
+                BD bd = new BD(MainActivity.this);
+                //WatcherModel watcherModel = new WatcherModel(-1, );
 
+//                for (int i = 0; i < selectedBirds.length; ++i) {
+//                    if (selectedBirds[i] == true) {
+//                        Toast.makeText(MainActivity.this, birdsList.get(i), Toast.LENGTH_SHORT).show();
+//                    }
+//                }
             }
         });
-
     }
+
+
+
     public void onRadioButtonClicked(View view) {
         // Is the button now checked?
         boolean checked = ((RadioButton) view).isChecked();
