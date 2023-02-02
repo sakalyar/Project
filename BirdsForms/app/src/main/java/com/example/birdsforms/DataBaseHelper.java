@@ -160,7 +160,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 String birds = cursor.getString(5);
                 System.out.println(login);
                 WatcherModel newWatcher = new WatcherModel(watcherID, login, password,
-                                                           numberOfBirds, rareBirds, birds);
+                        numberOfBirds, rareBirds, birds);
                 returnList.add(newWatcher);
 
             } while (cursor.moveToNext());

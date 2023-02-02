@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
                     textView.setText("");
                 }
                 if (rareSpeciesObserved)
-                Toast.makeText(MainActivity.this, "true" , Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "true" , Toast.LENGTH_SHORT).show();
                 else
                     Toast.makeText(MainActivity.this, "false" , Toast.LENGTH_SHORT).show();
             }
@@ -157,9 +157,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.redBookExcludedButton:
                 if (checked)
                     rareSpeciesObserved = false;
-                    RadioButton b = findViewById(R.id.redBookIncludedButton);
-                    b.setChecked(false);
-                    break;
+                RadioButton b = findViewById(R.id.redBookIncludedButton);
+                b.setChecked(false);
+                break;
         }
     }
 
